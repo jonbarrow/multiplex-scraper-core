@@ -55,7 +55,7 @@ class ConsistentStream extends EventEmitter {
 			return;
 		});
 
-		if (!response.body) {
+		if (!response || response.body) {
 			this.emit('finished');
 			return;
 		}
