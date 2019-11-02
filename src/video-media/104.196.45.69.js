@@ -53,29 +53,3 @@ class OneZeroFourOneNineSixFourFiveSixNine extends EventEmitter {
 }
 
 module.exports = OneZeroFourOneNineSixFourFiveSixNine;
-
-/*
-(async () => {
-	const scraper = new OneZeroFourOneNineSixFourFiveSixNine();
-
-	scraper.on('stream', stream => {
-		console.log(stream);
-	});
-
-	scraper.on('finished', () => {
-		console.timeEnd('scraping');
-	});
-	
-	console.time('scraping');
-	scraper.scrape({
-		title: 'Captain Marvel',
-		year: 2019,
-		ids: {
-			trakt: 193963,
-			slug: 'captain-marvel-2019',
-			imdb: 'tt4154664',
-			tmdb: 299537
-		}
-	}, 'movie');
-})();
-*/
