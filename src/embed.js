@@ -172,6 +172,16 @@ async function scrapeEmbed(embed) {
 			}
 			break;
 
+		case 'vidlink.org':
+			const vidlink = await hostScrapers.VidLink.scrape(embed);
+			if (vidlink) {
+				streams.push({
+					file_host: 'VidLink',
+					file: vidlink
+				});
+			}
+			break;
+
 		case 'openload.co':    // DEAD
 		case 'openload.io':    // DEAD
 		case 'openload.link':  // DEAD

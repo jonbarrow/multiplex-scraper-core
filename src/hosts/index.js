@@ -22,4 +22,5 @@ module.exports = {
 	VidLox: require('./vidlox'),
 	OnlyStream: require('./onlystream'),
 	VidSource: require('./vidsource'),
+	VidLink: require('./vidlink'),
 };
