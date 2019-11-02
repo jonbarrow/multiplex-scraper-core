@@ -59,6 +59,5 @@ typings/
 
 # custom
 src/video-media/fmovies.to.js
-src/video-media/104.196.45.69.js
 src/video-media/hdonline.eu.js
 src/video-media/gomovies.tube.js
