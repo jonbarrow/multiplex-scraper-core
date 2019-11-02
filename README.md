@@ -11,7 +11,10 @@ const { VideoMediaScraper } = require('multiplex-scraper-core');
 	const streams = [];
 	const scraper = new VideoMediaScraper();
 
-	scraper.on('stream', streams.push);
+	scraper.on('stream', stream => {
+		streams.push(stream);
+		console.log(stream);
+	});
 
 	scraper.on('finished', () => {
 		console.timeEnd('Scrape Time');
