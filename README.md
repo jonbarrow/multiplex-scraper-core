@@ -29,13 +29,14 @@ const { VideoMediaScraper } = require('multiplex-scraper-core');
 ```
 
 ### Sites
-- [ ] 104196 (planned)
+- [x] 9movies.yt
+- [x] 104.196.45.69
 - [x] 124movies.to
 - [x] consistent.stream
 - [x] f2movies.to
 - [ ] fmovies.to (planned)
 - [X] gomostream.com
-- [ ] gomovies.tube (planned)
+- [ ] gomovies.digital (planned)
 - [ ] hdonline.eu (planned)
 - [X] moviesjoy.net
 - [ ] primewire.li (scraper broken, looking into fix)

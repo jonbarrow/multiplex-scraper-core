@@ -1,4 +1,5 @@
 module.exports = {
+	ninemovies: require('./9movies.yt'),
 	onezerofoureoneninesixfourfivesixnine: require('./104.196.45.69'),
 	onetwofourmovies: require('./124movies.to'),
 	consistentstream: require('./consistent.stream'),
