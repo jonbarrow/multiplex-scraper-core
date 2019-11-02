@@ -4,10 +4,7 @@ const { VideoMediaScraper } = require('./');
 	const streams = [];
 	const scraper = new VideoMediaScraper();
 
-	scraper.on('stream', stream => {
-		streams.push(stream);
-		console.log(stream);
-	});
+	scraper.on('stream', streams.push);
 
 	scraper.on('finished', () => {
 		console.timeEnd('Scrape Time');
@@ -15,7 +12,7 @@ const { VideoMediaScraper } = require('./');
 		console.log(streams);
 	});
 	
-	console.log('Starting House scraping');
+	console.log('Starting Sprited Away scraping');
 	console.time('Scrape Time');
 	scraper.scrape('tt0245429');
 })();
