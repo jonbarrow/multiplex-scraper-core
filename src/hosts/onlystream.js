@@ -8,7 +8,11 @@ const jsonRegex = /sources:(\[.*?\])/;
 async function scrape(embedURL) {
 	const {body} = await got(embedURL);
 	
-	const packed = packedRegex.exec(body)[1];
+	const packed = packedRegex.exec(body);
+	if (!packed || !packed[1]) {
+		return null;
+	}
+	
 	const unpacked = unpacker.unPack(packed);
 
 	const sources = jsonRegex.exec(unpacked);

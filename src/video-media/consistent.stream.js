@@ -30,6 +30,9 @@ class ConsistentStream extends EventEmitter {
 			headers: {
 				Referer: `http://vexmovies.org/${slug}`
 			}
+		}).catch(() => {
+			this.emit('finished');
+			return;
 		});
 	
 		const html = response.body;
@@ -48,7 +51,14 @@ class ConsistentStream extends EventEmitter {
 				key: hash,
 				expire: expire
 			}
+		}).catch(() => {
+			return;
 		});
+
+		if (!response.body) {
+			this.emit('finished');
+			return;
+		}
 	
 		const servers = response.body.servers;
 	

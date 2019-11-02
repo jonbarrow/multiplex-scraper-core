@@ -7,28 +7,6 @@ async function scrapeEmbed(embed) {
 	const _domain = `${domain}.${tld}`;
 
 	switch (_domain) {
-		case 'openload.co':
-		case 'openload.io':
-		case 'openload.link':
-		case 'oload.tv':
-		case 'oload.stream':
-		case 'oload.site':
-		case 'oload.xyz':
-		case 'oload.win':
-		case 'oload.download':
-		case 'oload.cloud':
-		case 'oload.cc':
-		case 'oload.icu':
-		case 'oload.fun':
-			const openload = await hostScrapers.OpenLoad.scrape(embed);
-			if (openload) {
-				streams.push({
-					file_host: 'OpenLoad',
-					file: openload
-				});
-			}
-			break;
-
 		case 'mp4upload.com':
 			const mp4upload = await hostScrapers.MP4Upload.scrape(embed);
 			if (mp4upload) {
@@ -39,34 +17,6 @@ async function scrapeEmbed(embed) {
 			}
 			break;
 
-		case 'streamango.com':
-		case 'fruithosts.net':
-			const streamango = await hostScrapers.StreaMango.scrape(embed);
-			if (streamango) {
-				for (const stream of streamango) {
-					streams.push({
-						file_host: 'StreaMango',
-						file: (stream.source.startsWith('//') ? `https:${stream.source}` : stream.source),
-						quality: stream.quality
-					});
-				}
-			}
-			break;
-
-		case 'rapidvideo.com':
-			const rapidvideo = await hostScrapers.RapidVideo.scrape(embed);
-			if (rapidvideo) {
-				for (const stream of rapidvideo) {
-					streams.push({
-						file_host: 'RapidVideo',
-						file: stream.file,
-						quality: stream.quality
-					});
-				}
-			}
-			break;
-		
-		case 'verystream.com':
 		case 'putlockertv.biz':
 			const verystream = await hostScrapers.VeryStream.scrape(embed);
 			if (verystream) {
@@ -221,7 +171,24 @@ async function scrapeEmbed(embed) {
 				}
 			}
 			break;
-
+			
+		case 'openload.co':    // DEAD
+		case 'openload.io':    // DEAD
+		case 'openload.link':  // DEAD
+		case 'oload.tv':       // DEAD
+		case 'oload.stream':   // DEAD
+		case 'oload.site':     // DEAD
+		case 'oload.xyz':      // DEAD
+		case 'oload.win':      // DEAD
+		case 'oload.download': // DEAD
+		case 'oload.cloud':    // DEAD
+		case 'oload.cc':       // DEAD
+		case 'oload.icu':      // DEAD
+		case 'oload.fun':      // DEAD
+		case 'streamango.com': // DEAD
+		case 'fruithosts.net': // DEAD
+		case 'rapidvideo.com': // DEAD
+		case 'verystream.com': // DEAD
 		case 'vev.io': // captcha
 		case 'powvideo.net': // captcha
 		case 'gorillavid.in': // dead

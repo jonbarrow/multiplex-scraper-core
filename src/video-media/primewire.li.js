@@ -13,7 +13,10 @@ class PrimeWire extends EventEmitter {
 	}
 
 	async scrape(traktDetails, type, season, episode) {
-		let response = await got(`${URL_BASE}/?s=${traktDetails.ids.imdb}`);
+		let response = await got(`${URL_BASE}/?s=${traktDetails.ids.imdb}`).catch(() => {
+			this.emit('finished');
+			return;
+		});
 		const searchResults = response.body;
 		let dom = new JSDOM(searchResults);
 	
@@ -41,7 +44,8 @@ class PrimeWire extends EventEmitter {
 		dom = new JSDOM(response.body);
 	
 		const embedIdList =  [...dom.window.document.querySelectorAll('.embed-link')]
-			.map(element => element.getAttribute('go-key'));
+			.map(element => element.getAttribute('go-key'))
+			.filter(embedId => embedId);
 	
 		async.each(embedIdList, (embedId, callback) => {
 			got(`${URL_EMBED}&key=${embedId}`, {

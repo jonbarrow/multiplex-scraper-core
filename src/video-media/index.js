@@ -36,6 +36,7 @@ class VideoMediaScraper extends EventEmitter {
 
 			scraper.scrape(details, type, season, episode);
 		}, () => {
+			console.log('BIG DONE');
 			this.emit('finished');
 		});
 	}
