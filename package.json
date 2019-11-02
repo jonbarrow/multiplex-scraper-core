@@ -1,0 +1,19 @@
+{
+  "name": "multiplex-scraper-core",
+  "version": "1.0.0",
+  "description": "Scraper core for Multiplex streaming app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^3.1.0",
+    "got": "^9.6.0",
+    "jsdom": "^15.2.0",
+    "json5": "^2.1.1",
+    "parse-domain": "^2.3.2"
+  }
+}

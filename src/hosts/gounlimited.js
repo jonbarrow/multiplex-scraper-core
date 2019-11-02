@@ -1,0 +1,24 @@
+const got = require('got');
+const json5 = require('json5');
+const unpacker = require('../unpacker');
+
+const packedRegex = /(eval\(function\(p,a,c,k,e,d\){.*?}\(.*?\.split\('\|'\)\)\))/;
+const jsonRegex = /sources:(\[.*?\])/;
+
+async function scrape(embedURL) {
+	const {body} = await got(embedURL, {
+		rejectUnauthorized: false
+	});
+	
+	const packed = packedRegex.exec(body)[1];
+	const unpacked = unpacker.unPack(packed);
+
+	const sources = jsonRegex.exec(unpacked);
+	const parsed = json5.parse(sources[1]);
+
+	return parsed;
+}
+
+module.exports = {
+	scrape
+};
