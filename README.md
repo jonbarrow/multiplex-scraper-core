@@ -2,6 +2,29 @@
 
 This repo contains the core module used for scraping streams used by Multiplex (formerly known as Stream Box)
 
+### Example usage
+
+```js
+const { VideoMediaScraper } = require('multiplex-scraper-core');
+
+(async () => {
+	const streams = [];
+	const scraper = new VideoMediaScraper();
+
+	scraper.on('stream', streams.push);
+
+	scraper.on('finished', () => {
+		console.timeEnd('Scrape Time');
+		console.log(`Total streams: ${streams.length}`);
+		console.log(streams);
+	});
+	
+	console.log('Starting Sprited Away scraping');
+	console.time('Scrape Time');
+	scraper.scrape('tt0245429');
+})();
+```
+
 ### Sites
 - [ ] 104196 (planned)
 - [x] 124movies.to
