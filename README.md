@@ -12,7 +12,7 @@ This repo contains the core module used for scraping streams used by Multiplex (
 - [ ] gomovies.tube (planned)
 - [ ] hdonline.eu (planned)
 - [X] moviesjoy.net
-- [X] primewire.li
+- [ ] primewire.li (scraper broken, looking into fix)
 - [X] putlockertv.biz
 - [X] qazwsxedcrfvtgb.info
 - [X] vidsrc.me
