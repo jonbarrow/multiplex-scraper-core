@@ -171,7 +171,7 @@ async function scrapeEmbed(embed) {
 				}
 			}
 			break;
-			
+
 		case 'openload.co':    // DEAD
 		case 'openload.io':    // DEAD
 		case 'openload.link':  // DEAD
@@ -208,6 +208,10 @@ async function scrapeEmbed(embed) {
 		case 'waaw.tv': // captcha
 		case 'hqq.tv': // broken site
 		case 'vshare.eu': // doesn't throw http error on invalid embed, just times out
+		case 'streamelon.com': // dead
+		case 'mightyupload.com': // broken site
+		case 'whateverdomain.net': // dead
+		case 'loadvid.online': // broken site
 			break;
 
 		default:
