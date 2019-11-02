@@ -1,5 +1,3 @@
-// DEAD. RECAPTCHA
-
 const got = require('got');
 const { EventEmitter } = require('events');
 const { JSDOM } = require('jsdom');
