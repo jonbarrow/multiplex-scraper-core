@@ -23,4 +23,6 @@ module.exports = {
 	OnlyStream: require('./onlystream'),
 	VidSource: require('./vidsource'),
 	VidLink: require('./vidlink'),
+	MixDrop: require('./mixdrop'),
+	Vidia: require('./vidia'),
 };

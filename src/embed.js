@@ -181,6 +181,19 @@ async function scrapeEmbed(embed) {
 				});
 			}
 			break;
+		
+		case 'vidia.tv':
+			const vidia = await hostScrapers.Vidia.scrape(embed);
+			if (vidia) {
+				for (const stream of vidia) {
+					streams.push({
+						file_host: 'VidSource',
+						file: stream.file,
+						quality: stream.label
+					});
+				}
+			}
+			break;
 
 		case 'openload.co':    // DEAD
 		case 'openload.io':    // DEAD
@@ -222,6 +235,7 @@ async function scrapeEmbed(embed) {
 		case 'mightyupload.com': // broken site
 		case 'whateverdomain.net': // dead
 		case 'loadvid.online': // broken site
+		case 'mixdrop.co': // requires HTTP headers on video requests (might be able to use if request is intercepted with service worker)
 			break;
 
 		default:

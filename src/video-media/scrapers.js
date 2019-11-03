@@ -5,10 +5,12 @@ module.exports = {
 	consistentstream: require('./consistent.stream'),
 	f2movies: require('./f2movies.to'),
 	gomostream: require('./gomostream.com'),
+	megashare9: require('./megashare9.us'),
 	moviesjoy: require('./moviesjoy.net'),
 	primewire: require('./primewire.li'),
 	putlockertv: require('./putlockertv.biz'),
 	qazwsxedcrfvtgb: require('./qazwsxedcrfvtgb.info'),
 	vidsrc: require('./vidsrc.me'),
+	watch32hd: require('./watch32hd.co'),
 	watchseries: require('./watchseries.to'),
 };
