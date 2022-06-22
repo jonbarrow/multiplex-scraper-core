@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "async": "^3.1.0",
-    "got": "^9.6.0",
+    "got": "^11.8.5",
     "jsdom": "^15.2.0",
     "json5": "^2.1.1",
     "parse-domain": "^2.3.2"
